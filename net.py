@@ -61,6 +61,7 @@ def get_ips():
             if len(ip) == 0:
                 print("===Target Hosts===")
                 print("\n".join(map(str, ips)))
+                print("==================")
                 break
             elif re.match(ip_pattern, ip) and all(int(o) <= 255 for o in ip.split('.')):
                 ips.append(ip)
@@ -84,7 +85,8 @@ def get_commands():
             cmd = input("cmd: ")
             if len(cmd) == 0:
                 print("===Commands to Execute===")
-                print('\n'.join(map(str, commands)))
+                print(''.join(map(str, commands)))
+                print("=========================")
                 break
             commands.append(cmd + '\n')
         return commands
