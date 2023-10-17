@@ -83,6 +83,8 @@ def get_commands():
         while True:
             cmd = input("cmd: ")
             if len(cmd) == 0:
+                print("===Commands to Execute===")
+                print('\n'.join(map(str, commands)))
                 break
             commands.append(cmd + '\n')
         return commands
